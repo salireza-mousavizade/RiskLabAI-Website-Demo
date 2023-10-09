@@ -1,5 +1,7 @@
 module.exports = {
   root: true,
+  purge: [],
+  mode; 'jit',
   parser: '@typescript-eslint/parser',
   env: {
     browser: true,

@@ -1,0 +1,37 @@
+/* styles/About.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mission, .team, .values {
+    margin-bottom: 3rem;
+}
+
+.teamMembers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.member {
+    width: 200px;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+}
