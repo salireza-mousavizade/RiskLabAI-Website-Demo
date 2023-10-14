@@ -149,4 +149,4 @@ These functionalities are available in both Python and Julia in the RiskLabAI li
 ### References
 
 1. De Prado, M. L. (2018). Advances in financial machine learning. John Wiley & Sons.
-2. de Prado, M. M. L. (2020). Machine learning for asset managers. Cambridge University Press.
+2. De Prado, M. M. L. (2020). Machine learning for asset managers. Cambridge University Press.

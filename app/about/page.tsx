@@ -8,6 +8,7 @@ import {
     Box,
     Button,
     ButtonGroup,
+    Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
     Grid,
     InputAdornment,
     Paper,
@@ -31,6 +32,7 @@ import EventsAccordion from './EventsAccordion'
 import ContactInfoTabs from './ContactInfo'
 
 import InteractivePaper from "../InteractivePaper";
+import * as React from "react";
 
 
 export default function Page() {
@@ -52,9 +54,37 @@ export default function Page() {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+            // Make a request to send the email using API.
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
+            }).then((response) => {
+                // Display an error message.
+                formik.resetForm()
+                if (200 !== response.status) {
+                    return;
+                }
+            });
+
         },
     })
+
+
+    const [openInfoDialog, setOpenInfoDialog] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpenInfoDialog(true);
+    };
+
+    const handleClose = () => {
+        setOpenInfoDialog(false);
+    };
+
+
 
     const iconSize = responsiveIconSize(useBreakpoint())
 
@@ -339,7 +369,7 @@ export default function Page() {
                     RiskLab Toronto Head
                 </Typography>
 
-                <InteractivePaper rotationAmount={0.15}>
+                <InteractivePaper rotationAmount={0.15} >
                     <Stack
                         display="flex"
                         style={{
@@ -357,11 +387,11 @@ export default function Page() {
                             sx={{width: '100%', height: '100%'}}
                         />
 
-                        <Typography sx={{textAlign: 'center'}} key={'full name'} variant="h5">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}} key={'full name'} variant="h5">
                             {luisSeco.name}
                         </Typography>
 
-                        <Typography sx={{textAlign: 'justify'}} key={'toronto'} variant="caption">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'toronto'} variant="caption">
                             {luisSeco.description}
                         </Typography>
 
@@ -407,11 +437,11 @@ export default function Page() {
                             sx={{width: '100%', height: '100%'}}
                         />
 
-                        <Typography sx={{textAlign: 'center'}} key={'full name'} variant="h5">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}} key={'full name'} variant="h5">
                             {hamidArian.name}
                         </Typography>
 
-                        <Typography sx={{textAlign: 'justify'}} key={'york'} variant="caption">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'york'} variant="caption">
                             {hamidArian.description}
                         </Typography>
 
@@ -451,57 +481,6 @@ export default function Page() {
                     and create transformative solutions for the financial sector.
                 </Typography>
             </Grid>
-
-            {/*{raList.map((ra, index) => {*/}
-            {/*    return (*/}
-            {/*        <Grid item key={index} xs={12} sm={12} md={6} lg={6}>*/}
-            {/*            <Paper elevation={elevationValue}>*/}
-            {/*                <Stack*/}
-            {/*                    display="flex"*/}
-            {/*                    style={{*/}
-            {/*                        alignItems: 'center',*/}
-            {/*                    }}*/}
-            {/*                    justifycontent="center"*/}
-            {/*                    spacing={2}*/}
-            {/*                    padding={2}*/}
-            {/*                >*/}
-            {/*                    <Avatar*/}
-            {/*                        key={'avatar'}*/}
-            {/*                        alt={ra.name}*/}
-            {/*                        variant="rounded"*/}
-            {/*                        src={ra.srcImage}*/}
-            {/*                        sx={{width: '100%', height: '100%'}}*/}
-            {/*                    />*/}
-
-            {/*                    <Typography sx={{textAlign: 'center'}} key={ra.name} variant="h6">*/}
-            {/*                        {ra.name}*/}
-            {/*                    </Typography>*/}
-
-            {/*                    <Typography sx={{textAlign: 'justify'}} key={ra.university} variant="caption">*/}
-            {/*                        is a RiskLab AI research assistant and student in Computer Science and Economics*/}
-            {/*                        at Sharif University of Technology. His primary interest is in Statistics, Machine*/}
-            {/*                        Learning and Mathematical Finance. He is working on Julia and Python's Library at*/}
-            {/*                        RiskLab AI. He is also a research assistant for TeiAS in Natural Language*/}
-            {/*                        Processing.*/}
-            {/*                    </Typography>*/}
-
-            {/*                    <ButtonGroup aria-label="large button group">*/}
-            {/*                        {ra.iconsData.map((item) => {*/}
-            {/*                            return (*/}
-            {/*                                <LiveIconComponent*/}
-            {/*                                    text={item.title}*/}
-            {/*                                    icon={item.icon}*/}
-            {/*                                    to={item.to}*/}
-            {/*                                    sx={{fontSize: iconSize / 2}}*/}
-            {/*                                />*/}
-            {/*                            )*/}
-            {/*                        })}*/}
-            {/*                    </ButtonGroup>*/}
-            {/*                </Stack>*/}
-            {/*            </Paper>*/}
-            {/*        </Grid>*/}
-            {/*    )*/}
-            {/*})}*/}
 
             <SlideShow raList={raList} elevationValue={elevationValue} iconSize={iconSize / 2}/>
 
@@ -627,14 +606,14 @@ export default function Page() {
                     display="flex"
                     justifyContent="center"
                     width="80%"
-                    bgcolor={'#e4e4e4'}
-                    sx={{marginX: 'auto', marginY: 1, padding: 2, borderRadius: 5}}>
+                    sx={{marginX: 'auto', marginY: 1, padding: 3, borderRadius: 3}}>
                     <Form value={formik} sx={{alignItems: 'center', width: '80%', padding: 2}}>
                         <TextField
                             sx={{
                                 width: '50%',
                                 padding: 1.375,
                             }}
+                            // className={'bg-black dark:bg-white'}
                             label="Name"
                             id="name"
                             name="name"
@@ -720,9 +699,33 @@ export default function Page() {
                         />
 
                         <Box display="flex" justifyContent="center" marginTop={1}>
-                            <Button type="submit" variant="outlined" color="success">
+                            <Button onClick={handleClickOpen} type="submit" variant="outlined" color="success">
                                 Submit
                             </Button>
+                            <Dialog
+                                open={openInfoDialog}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">
+                                    Thank You for Reaching Out!
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        Your message has been successfully submitted. We truly value your input and inquiries. Our team will review your message and get back to you as soon as possible. In the meantime, feel free to explore our website further or check out our FAQs for instant answers. Thank you for choosing <b>RiskLabAI</b>.
+                                        <br/>
+                                        <br/>
+                                        Best regards,
+                                        The RiskLabAI Team
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={handleClose} autoFocus>
+                                        Ok
+                                    </Button>
+                                </DialogActions>
+                            </Dialog>
                         </Box>
                     </Form>
                 </Paper>

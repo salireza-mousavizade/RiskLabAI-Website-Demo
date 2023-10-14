@@ -1,48 +1,76 @@
+'use client'
+
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
+import {Button} from '@mui/material'
+import {useState} from "react";
 
 const Header = () => {
-  return (
-    <header className="flex items-center justify-between py-10">
-      <div>
-        <Link href="/" aria-label={siteMetadata.headerTitle}>
-          <div className="flex items-center justify-between">
-            <div className="mr-3">
-              <Logo />
+
+    const [activeTab, setActiveTab] = useState('main');
+
+
+    return (
+        <header className="flex items-center justify-between py-10">
+            <div>
+                <Link href="/" aria-label={siteMetadata.headerTitle}>
+                    <div className="flex items-center justify-between mb-1">
+                        <div className="mr-3">
+                            <img src={'/static/logo/logo-motion.gif'} width={75}/>
+                        </div>
+                        {typeof siteMetadata.headerTitle === 'string' ? (
+                            <div className="hidden h-6 text-2xl sm:block font-light">
+                                {/*{siteMetadata.headerTitle}*/}
+                                RiskLab
+                                <b className={'font-semibold'}>AI</b>
+
+                            </div>
+                        ) : (
+                            <div>
+                                RiskLab
+                                <b className={'font-semibold'}>AI</b>
+                            </div>
+                            // siteMetadata.headerTitle
+                        )}
+                    </div>
+                </Link>
             </div>
-            {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="hidden h-6 text-2xl font-semibold sm:block">
-                {siteMetadata.headerTitle}
-              </div>
-            ) : (
-              siteMetadata.headerTitle
-            )}
-          </div>
-        </Link>
-      </div>
-      <div className="flex items-center leading-5 space-x-4 sm:space-x-6">
-        {headerNavLinks
-          .filter((link) => link.href !== '/')
-          .map((link) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              className="hidden sm:block font-medium text-gray-900 dark:text-gray-100"
-            >
-              {link.title}
-            </Link>
-          ))}
-        <SearchButton />
-        <ThemeSwitch />
-        <MobileNav />
-      </div>
-    </header>
-  )
+            <div className="flex items-center leading-5 space-x-4 sm:space-x-6">
+                {headerNavLinks
+                    .filter((link) => link.href !== '/')
+                    .map((link) => (
+                        link.title === activeTab ?
+                            <Link
+                                style={{
+                                    color: 'initial', // default color
+                                    '&:hover': {
+                                        color: 'green', // change color to green on hover
+                                    },
+                                }}
+                                onClick={() => setActiveTab(link.title)}
+                                key={link.title}
+                                href={link.href}
+                                className="hidden sm:block font-semibold text-gray-900 dark:text-gray-100"
+                            >
+                                {link.title}
+                            </Link> : <Link
+                                onClick={() => setActiveTab(link.title)}
+                                key={link.title}
+                                href={link.href}
+                                className="hidden sm:block font-light text-gray-900 dark:text-gray-100"
+                            >
+                                {link.title}
+                            </Link>
+                    ))}
+                {/*<SearchButton />*/}
+                <ThemeSwitch/>
+                <MobileNav/>
+            </div>
+        </header>
+    )
 }
 
 export default Header

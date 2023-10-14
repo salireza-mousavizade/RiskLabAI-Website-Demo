@@ -13,9 +13,9 @@ export default function EventsAccordion({eventsList,}) {
             {eventsList.map((event) => {
                 return (
                     <Box display="flex" justifyContent="center" width="100%">
-                        <Accordion style={{width: '100%', borderRadius: 0}}>
+                        <Accordion className={'bg-primary-50 dark:bg-primary-950 text-primary-950 dark:text-primary-50'} style={{width: '100%', borderRadius: 0}}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
+                                expandIcon={<ExpandMoreIcon color={'text-primary-950 dark:text-primary-50'}/>}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >

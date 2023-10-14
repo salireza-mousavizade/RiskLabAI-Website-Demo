@@ -13,28 +13,23 @@ const ArticlesGridItemComponent = ({
   authorImageSrc,
   articleCreatedAt,
 }) => {
-  // const theme = useTheme()
-  const borderRadius = '0.5rem'
 
   return (
-      <InteractivePaper rotationAmount={0.15}>
+      <InteractivePaper rotationAmount={0.15} sx={{borderWidth: 0}}>
     <Card
+        className={'bg-gray-100 dark:bg-gray-900'}
       sx={{
-        // backgroundColor: alpha(theme.palette.background.paper, 0.7),
-        // backdropFilter: 'blur(1.5px)',
-        borderRadius: borderRadius,
-        '&:hover': {
-          // backgroundColor: alpha(theme.palette.background.paper, 0.85),
-          transform: 'scale3d(1.015, 1.015, 1)',
-          transition: 'transform 0.25s ease-out',
-        },
+        borderRadius: 0,
+        margin: 0
       }}
     >
       <Link href={`/blog/${articleId}`}>
         <Paper
           variant="outlined"
+          className={'bg-gray-100 dark:bg-gray-900'}
           sx={{
             height: 300,
+            borderRadius: 0
           }}
         >
           <Avatar
@@ -51,9 +46,9 @@ const ArticlesGridItemComponent = ({
       </Link>
 
       <CardContent>
-        <Typography variant="h4">{articleTitle}</Typography>
+        <Typography className={'text-black dark:text-white'} variant="h4">{articleTitle}</Typography>
 
-        <Typography marginTop={1} textalign={'justify'} variant="body1">
+        <Typography className={'text-black dark:text-white'} marginTop={1} textalign={'justify'} variant="body1">
           {articleSubTitle}
         </Typography>
       </CardContent>
@@ -62,8 +57,8 @@ const ArticlesGridItemComponent = ({
         avatar={
           <Avatar alt={fullName} src={authorImageSrc} width={1} height={1} position={'relative'} />
         }
-        title={<Typography variant={'subtitle1'}> {fullName} </Typography>}
-        subheader={<Typography variant={'subtitle2'}> {articleCreatedAt} </Typography>}
+        title={<Typography className={'text-black dark:text-white'} variant={'subtitle1'}> {fullName} </Typography>}
+        subheader={<Typography className={'text-gray-400 dark:text-gray-500'} variant={'subtitle2'}> {articleCreatedAt} </Typography>}
       />
     </Card>
   </InteractivePaper>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 
-const InteractivePaper = ({children, rotationAmount}) => {
+const InteractivePaper = ({children, rotationAmount, sx}) => {
     const [style, setStyle] = useState({});
     const paperRef = useRef(null);
 
@@ -27,7 +27,7 @@ const InteractivePaper = ({children, rotationAmount}) => {
     const resetStyle = () => {
         setStyle({
             transform: 'rotateY(0) rotateX(0)',
-            transition: 'transform 0.3s'
+            transition: 'transform 0.3s',
         });
     };
 
@@ -42,7 +42,16 @@ const InteractivePaper = ({children, rotationAmount}) => {
         };
     }, []);
 
-    return <Paper ref={paperRef} elevation={8} style={style}>
+    return <Paper
+        ref={paperRef}
+        sx={{
+            borderRadius: 0,
+            borderWidth: 2,
+            ...sx
+        }}
+        className={'bg-white dark:bg-black border-primary-100 dark:border-primary-900'}
+        style={style}
+    >
         {children}
     </Paper>;
 };

@@ -334,13 +334,13 @@ export default function Research() {
                             {' '}
                             {items.map((rf, rowIndex) => {
                                 return (
-                                    <Card key={rowIndex} variant="outlined" style={{marginBottom: '1rem'}}>
+                                    <Card className={'bg-gray-100 dark:bg-gray-900 border-primary-300 dark:border-primary-600'} key={rowIndex} variant="outlined" style={{marginBottom: '1rem'}}>
                                         <CardContent>
-                                            <Typography variant="h6">{rf.title}</Typography>
-                                            <Typography color="textSecondary" style={{marginBottom: '0.5rem'}}>
+                                            <Typography className={'text-black dark:text-white border-black dark:border-white'} variant="h6">{rf.title}</Typography>
+                                            <Typography className={'text-primary-500 dark:text-primary-400 border-black dark:border-white'} color="textSecondary" style={{marginBottom: '0.5rem'}}>
                                                 {rf.category}
                                             </Typography>
-                                            <Typography variant="body2" style={{marginBottom: '0.5rem'}}>
+                                            <Typography className={'text-black dark:text-white border-black dark:border-white'} variant="body2" style={{marginBottom: '0.5rem'}}>
                                                 {rf.description}
                                             </Typography>
                                         </CardContent>
@@ -384,16 +384,16 @@ export default function Research() {
                             {' '}
                             {items.map((paper, rowIndex) => {
                                 return (
-                                    <Card key={rowIndex} variant="outlined" style={{marginBottom: '1rem'}}>
+                                    <Card className={'bg-gray-100 dark:bg-gray-900 border-primary-300 dark:border-primary-600'} key={rowIndex} variant="outlined" style={{marginBottom: '1rem'}}>
                                         <CardContent>
-                                            <Typography variant="h6">{paper.title}</Typography>
-                                            <Typography color="textSecondary" style={{marginBottom: '0.5rem'}}>
+                                            <Typography className={'text-black dark:text-white'} variant="h6">{paper.title}</Typography>
+                                            <Typography className={'text-gray-500 dark:text-gray-400'} color="textSecondary" style={{marginBottom: '0.5rem'}}>
                                                 {paper.category}
                                             </Typography>
-                                            <Typography variant="body2" style={{marginBottom: '0.5rem'}}>
+                                            <Typography className={'text-black dark:text-white'} variant="body2" style={{marginBottom: '0.5rem'}}>
                                                 Abstract: {paper.abstract}
                                             </Typography>
-                                            <Typography color="textSecondary" style={{marginBottom: '0.5rem'}}>
+                                            <Typography className={'text-gray-500 dark:text-gray-400'} color="textSecondary" style={{marginBottom: '0.5rem'}}>
                                                 {paper.author}
                                             </Typography>
                                             <ButtonGroup variant="outlined" aria-label="outlined button group">

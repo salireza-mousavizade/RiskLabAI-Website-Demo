@@ -54,11 +54,11 @@ export default function ContactInfoTabs() {
 
     return (
         <Box sx={{width: '100%'}}>
-            <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+            <Box sx={{borderBottom: 1, borderColor: 'divider'}} className={'bg-transparent'}>
                 <Tabs value={value} onChange={handleChange} centered aria-label="basic tabs example">
-                    <Tab label="Location" {...a11yProps(0)} />
-                    <Tab label="Mail" {...a11yProps(1)} />
-                    <Tab label="Address" {...a11yProps(2)} />
+                    <Tab label="Location" className={'text-primary-500'} icon={<LocationOnIcon fontSize="large"/>} {...a11yProps(0)} />
+                    <Tab label="Mail" className={'text-primary-500'} icon={<LocalPhoneIcon fontSize="large" />} {...a11yProps(1)} />
+                    <Tab label="Address" className={'text-primary-500'} icon={<MailIcon fontSize="large" />} {...a11yProps(2)} />
                 </Tabs>
             </Box>
             <Card hidden={value !== 0}>
@@ -68,7 +68,6 @@ export default function ContactInfoTabs() {
                         variant="h5"
                         gutterBottom
                     >
-                        <LocationOnIcon fontSize="large" sx={{marginRight: 2}}/>
                         Location
                     </Typography>
                     <Typography
@@ -95,7 +94,7 @@ export default function ContactInfoTabs() {
                         variant="h5"
                         gutterBottom
                     >
-                        <LocalPhoneIcon fontSize="large" sx={{marginRight: 2}}/>
+
                         Phone
                     </Typography>
                     <Typography
@@ -123,7 +122,7 @@ export default function ContactInfoTabs() {
                         variant="h5"
                         gutterBottom
                     >
-                        <MailIcon fontSize="large" sx={{marginRight: 2}}/>
+
                         Email
                     </Typography>
                     <Typography

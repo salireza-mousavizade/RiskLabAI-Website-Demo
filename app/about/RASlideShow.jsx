@@ -19,12 +19,13 @@ export default function SlideShow({raList, elevationValue, iconSize}) {
     return (
         <Carousel sx={{
             width: '100%',
-            padding: '1rem',
-            // display: 'flex',
-            backgroundColor: 'rgba(128,128,128,0.1)',
+            padding: '0.5rem',
             alignItems: 'center',
             justifyContent: 'center',
-        }}>
+            borderRadius: '1rem',
+        }}
+        className={'bg-primary-50 dark:bg-primary-950'}
+        >
             {groupedItems.map((group, groupIndex) => (
                 <Grid container width={'100%'} key={groupIndex} sx={{width: '100%', padding: '0.5rem'}}>
                     {group.map((ra, index) => (
