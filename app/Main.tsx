@@ -92,7 +92,7 @@ export default function Home({posts}) {
                         style={{
                             // color: '#ffd400',
                             // background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
-                            background: 'linear-gradient(90deg, #1F356A, #ffd400)',
+                            background: 'linear-gradient(90deg, #555555, #ffd400)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             MozBackgroundClip: 'text',

@@ -361,13 +361,13 @@ export default function Page() {
             </Grid>
 
             <Grid item key={'avatar-name-social_media_links'} xs={12} sm={12} md={6} lg={6}>
-                <Typography
-                    sx={{textAlign: 'center', marginY: 2}}
-                    key={'RiskLab Toronto Head'}
-                    variant="h5"
-                >
-                    RiskLab Toronto Head
-                </Typography>
+                {/*<Typography*/}
+                {/*    sx={{textAlign: 'center', marginY: 2}}*/}
+                {/*    key={'RiskLab Toronto Head'}*/}
+                {/*    variant="h5"*/}
+                {/*>*/}
+                {/*    RiskLab Toronto Head*/}
+                {/*</Typography>*/}
 
                 <InteractivePaper rotationAmount={0.15} >
                     <Stack
@@ -411,13 +411,13 @@ export default function Page() {
                 </InteractivePaper>
             </Grid>
             <Grid item key={'avatar-name-social_media_links'} xs={12} sm={12} md={6} lg={6}>
-                <Typography
-                    sx={{textAlign: 'center', marginY: 2}}
-                    key={'RiskLab Toronto Head'}
-                    variant="h5"
-                >
-                    RiskLab AI Head
-                </Typography>
+                {/*<Typography*/}
+                {/*    sx={{textAlign: 'center', marginY: 2}}*/}
+                {/*    key={'RiskLab Toronto Head'}*/}
+                {/*    variant="h5"*/}
+                {/*>*/}
+                {/*    RiskLab AI Head*/}
+                {/*</Typography>*/}
 
                 <InteractivePaper rotationAmount={0.15}>
                     <Stack

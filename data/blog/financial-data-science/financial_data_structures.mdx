@@ -1,70 +1,132 @@
+---
+title: The Need For Structure
+date: '2024-03-08'
+tags: ['financial-data-science']
+draft: false
+summary: Many people use Time bars to make sense of financial market data, but they're not the best choice. Why?
+---
+
 # The Need For Structure
 
 Many people use Time bars to make sense of financial market data, but they're not the best choice. Why? First, trading isn't consistent throughout the day. Second, different types of bars can help solve this issue, like bars based on trading activity. For example, the function `timeBar` uses two things: a dataset of raw financial data (tickData) and how often you want the data to be updated (frequency). The function then gives you a new dataset that's easier to look at.
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
 
-```python
-def timeBar(
-  tickData,
-  frequency
-):
-```
-</td><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-```julia
-function timeBar(
-  tickData,
-  frequency
-)
-```
-</td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        </tr>
+
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def timeBar(
+                tickData,
+                frequency
+                ):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function timeBar(
+                tickData,
+                frequency
+                )
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 You can also use Tick bars. This method collects specific variables (like timestamp, VWAP, opening price, etc.) every time a set number of trades happen. For example, you get new data every 1,000 trades. This is more in sync with the rate at which new info comes into the market.
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
 
-```python
-def tickBar(
-  tickData,
-  tickPerBar = 10,
-  numberBars = None
-):
-```
-</td><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-```julia
-function tickBar(
-  tickData,
-  tickPerBar = 10,
-  numberBars = nothing
-)
-```
-</td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        </tr>
+
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def tickBar(
+                tickData,
+                tickPerBar = 10,
+                numberBars = None
+                ):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function tickBar(
+                tickData,
+                tickPerBar = 10,
+                numberBars = nothing
+                )
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 But, Tick bars have a downside. Sometimes, one trade can look like many smaller trades due to how trading systems work. This can mess up your count.
 
 You can also use Volume bars. They update every time a certain amount of trading volume occurs. 
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-```python
-def volumeBar(
-  tickData,
-  volumePerBar = 10000,
-  numberBars = None
-):
-```
-</td><td style="border: 1px solid transparent">
+        </tr>
 
-```julia
-function volumeBar(
-  tickData,
-  volumePerBar = 10000,
-  numberBars = nothing
-)
-```
-</td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def volumeBar(
+                tickData,
+                volumePerBar = 10000,
+                numberBars = None
+                ):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function volumeBar(
+                tickData,
+                volumePerBar = 10000,
+                numberBars = nothing
+                )
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
+
 
 Dollar bars are another option. They update every time a fixed amount of money is traded in the market. This is helpful when you're looking at big price changes over time.
 
@@ -72,30 +134,46 @@ Let's say you're watching a stock that doubled its price. To sell some of that s
 
 The number of Dollar bars remains pretty consistent, unlike Tick and Volume bars that can vary a lot. Below are some graphs that show the number of bars per day for these different methods.
 
-<div style="display: flex; justify-content: center;"><img src="Figs/bar_frequency.png" alt="Bar Frequency" style="width: 50%;"/></div>
+![synfig](/static/Figs/financial-data-science/bar_frequency.png)
 
-<div style="display: flex; justify-content: center;"><img src="Figs/p11.png" alt="P11 Graph" style="width: 50%;"/></div>
+![synfig](/static/Figs/financial-data-science/p11.png)
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-```python
-def dollarBar(
-  tickData,
-  dollarPerBar = 100000,
-  numberBars = None
-):
-```
-</td><td style="border: 1px solid transparent">
+        </tr>
 
-```julia
-function dollarBar(
-  tickData,
-  dollarPerBar = 100000,
-  numberBars = nothing
-)
-```
-</td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
 
+                ```python
+                def dollarBar(
+                tickData,
+                dollarPerBar = 100000,
+                numberBars = None
+                ):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function dollarBar(
+                tickData,
+                dollarPerBar = 100000,
+                numberBars = nothing
+                )
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 
 # Information-driven Bars
@@ -146,21 +224,38 @@ Here, $ b_t $ can be either -1 or 1, and it essentially captures whether the tic
 
 Before the code snippet, we'd like to inform you that these functionalities are available in both Python and Julia through the RiskLabAI library.
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-  ```python
-  def infoBar(tickData,
-              type = "volume",
-              tickExpectedInit = 2000):
-  ```
-  </td><td style="border: 1px solid transparent">
-  
-  ```julia
-  function infoBar(tickData,
-                   type::String = "volume",
-                   tickExpectedInit = 2000)
-  ```
-  </td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        </tr>
+
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def infoBar(tickData,
+                type = "volume",
+                tickExpectedInit = 2000):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function infoBar(tickData,
+                type::String = "volume",
+                tickExpectedInit = 2000)
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 ---
 
@@ -194,21 +289,38 @@ We can extend the concept of TIBs to form Volume Imbalance Bars (VIBs) and Dolla
 
 Before the code snippet, we'd like to inform you that these functionalities are available in both Python and Julia through the RiskLabAI library.
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-  ```python
-  def infoBar(tickData,
-              type = "volume",
-              tickExpectedInit = 2000):
-  ```
-  </td><td style="border: 1px solid transparent">
-  
-  ```julia
-  function infoBar(tickData,
-                   type::String = "volume",
-                   tickExpectedInit = 2000)
-  ```
-  </td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        </tr>
+
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def infoBar(tickData,
+                type = "volume",
+                tickExpectedInit = 2000):
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function infoBar(tickData,
+                type::String = "volume",
+                tickExpectedInit = 2000)
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 ---
 
@@ -283,23 +395,38 @@ $$
 
 ## Implementing the Algorithms with RiskLab AI
 
-<div style="display: flex; justify-content: center;"><table style="width:80%"><tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr><tr><td style="border: 1px solid transparent">
+<div style={{display: 'flex', justifyContent: 'center'}}>
+    <table style={{tableLayout: 'fixed', width: '90%'}}>
+        <tr>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
 
-  ```python
-  def calculate_theta_T(
-      T: int,
-      sequence: List[int]
-  ) -> int:
-  ```
-</td><td style="border: 1px solid transparent">
+        </tr>
 
-  ```julia
-  function calculate_theta_T(
-      T::Int,
-      sequence::Array{Int, 1}
-  )::Int
-  ```
-</td></tr><tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr></table></div>
+        <tr>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```python
+                def calculate_theta_T(
+                T: int,
+                sequence: List[int]
+                ) -> int:
+                ```
+
+            </td>
+            <td style={{border: '1px solid transparent'}}>
+
+                ```julia
+                function calculate_theta_T(
+                T::Int,
+                sequence::Array{Int, 1}
+                )::Int
+                ```
+
+            </td>
+        </tr>
+    </table>
+</div>
 
 These functionalities are available in both Python and Julia in the RiskLab AI library.
 
