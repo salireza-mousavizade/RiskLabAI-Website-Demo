@@ -6,6 +6,10 @@ draft: false
 summary: This blog post focuses on a novel way to backtest trading strategies, aiming to reduce the chances of backtest overfitting.
 ---
 
+<TOCInline toc={props.toc} asDisclosure />
+
+<div style={{marginBottom: '2rem'}}/>
+
 This blog post focuses on a novel way to backtest trading strategies, aiming to reduce the chances of backtest overfitting. The technique uses statistical characteristics from historical data to generate synthetic datasets for testing.
 
 ## The Issue of Backtest Overfitting
@@ -135,7 +139,9 @@ The function operates on parameters like forecast prices, half-life of the model
 
 The experiments suggest that there is a unique optimal trading rule that can be determined for a financial instrument whose price follows a discrete Ornstein-Uhlenbeck (O-U) process.
 
-![synfig](/static/Figs/backtesting/synfig.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![Mountains](/static/Figs/backtesting/synfig.png)
+</div>
 
 ### References
 

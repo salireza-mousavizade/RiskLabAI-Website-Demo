@@ -6,6 +6,9 @@ draft: false
 summary: Overfitting can be especially problematic when we rely solely on backtesting for validation. To improve model performance and interpretation, one must look beyond simple backtesting and consider other analyses like feature importance.
 ---
 
+<TOCInline toc={props.toc} exclude="Why Backtesting is Not Enough" asDisclosure/>
+<div style={{marginBottom: '2rem'}}/>
+
 ### Why Backtesting is Not Enough
 
 Overfitting can be especially problematic when we rely solely on backtesting for validation. To improve model performance and interpretation, one must look beyond simple backtesting and consider other analyses like feature importance.
@@ -30,14 +33,20 @@ In machine learning, a "substitution effect" can dilute the importance of featur
     - Pros: Applicable to any classifier.
     - Cons: Computationally expensive, susceptible to substitution effects.
 
-![mdi](/static/Figs/feature-engineering/MDI_results.png)
 
+
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![mdi](/static/Figs/feature-engineering/MDI_results.png)
+</div>
 
 **MDI feature importance computed on a synthetic dataset**
 
 Both MDI and MDA feature importances are available in the RiskLabAI library, for both Python and Julia.
 
-![mda](/static/Figs/feature-engineering/MDA_results.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![mda](/static/Figs/feature-engineering/MDA_results.png)
+</div>
+
 
 
 **MDA feature importance computed on a synthetic dataset**
@@ -149,7 +158,9 @@ Single Feature Importance (SFI) evaluates the out-of-sample (OOS) performance sc
 View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 
-![SFI](/static/Figs/feature-engineering/SFI_results.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![SFI](/static/Figs/feature-engineering/SFI_results.png)
+</div>
 
 
 #### Orthogonal Features

@@ -6,6 +6,11 @@ draft: false
 summary: Hyper-parameter tuning is crucial for optimizing machine learning (ML) algorithms. Effective tuning results in improved real-world performance.
 ---
 
+
+<TOCInline toc={props.toc} exclude="Hyper-Parameter Tuning with Cross-Validation" asDisclosure />
+
+<div style={{marginBottom: '2rem'}}/>
+
 # Hyper-Parameter Tuning with Cross-Validation
 
 ## Importance of Hyper-Parameter Tuning
@@ -31,6 +36,7 @@ For hyperparameter tuning, grid search is often an initial step to understand th
                 # will be provided here.
                 # This is not available at the
                 # time or writing this article
+
 
 
 
@@ -80,8 +86,6 @@ f[x]=\left\{\begin{array}{cl}
 0 & \text{for } x>b
 \end{array}\right.
 $$
-
-![](/static/Figs/financial-modeling/loguniform.png)
 
 ## Limitations of Accuracy as a Measure
 Accuracy alone doesn't provide a meaningful evaluation in finance-related ML, particularly in investment strategies. It fails to account for the probabilities associated with predictions. Cross-entropy loss, or $log loss$, is a better performance metric as it incorporates prediction probabilities.

@@ -6,6 +6,10 @@ draft: false
 summary: You might have noticed that many financial models rely on the assumption that data points are independent and identically distributed (IID). However, this is often not the case in real-world financial applications.
 ---
 
+<TOCInline toc={props.toc} exclude="Financial Data Weighting" asDisclosure/>
+
+<div style={{marginBottom: '2rem'}}/>
+
 # Financial Data Weighting
 
 ## The Challenge of Non-IID Data in Finance
@@ -106,7 +110,10 @@ $$
 \bar{u}_{i} = \frac{\sum_{t=1}^{T} u_{t, i}}{\sum_{t=1}^{T} \mathbb{I}_{t, i}}
 $$
 
-![synfig](/static/Figs/financial-data-science/averageuniqness.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![synfig](/static/Figs/financial-data-science/averageuniqness.png)
+</div>
+
 
 In both RiskLabAI's Python and Julia libraries, you can estimate label uniqueness using specific functions.
 
@@ -417,7 +424,10 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 
 The Monte Carlo tests reveal differences between Standard and Sequential Bootstraps.
 
-![synfig](/static/Figs/financial-data-science/seqvsstan.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![synfig](/static/Figs/financial-data-science/seqvsstan.png)
+</div>
+
 
 We also examine the histogram of the average uniqueness for both bootstrapping techniques. This gives us insights into how unique each sample is, allowing for better analysis.
 
@@ -525,7 +535,10 @@ These functionalities are available in both Python and Julia in the RiskLabAI li
 - $ c=0 $ leads to weights converging to zero as they age.
 - $ c < 0 $ implies that the oldest observations get zero weight.
 
-![synfig](/static/Figs/financial-data-science/timedecay.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![synfig](/static/Figs/financial-data-science/timedecay.png)
+</div>
+
 
 ### References
 

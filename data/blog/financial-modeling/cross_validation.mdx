@@ -6,6 +6,10 @@ draft: false
 summary: In traditional settings, cross-validation is an effective tool for evaluating a machine learning model's performance. However, the complexities of financial data pose unique challenges.
 ---
 
+<TOCInline toc={props.toc} exclude="Cross-Validation in Finance: Challenges and Solutions" asDisclosure />
+
+<div style={{marginBottom: '2rem'}}/>
+
 ## Cross-Validation in Finance: Challenges and Solutions
 
 ### The Shortcomings of Ordinary Cross-Validation in Finance
@@ -22,7 +26,10 @@ In traditional settings, cross-validation is an effective tool for evaluating a 
 
 In k-fold cross-validation, the data is partitioned into $k$ subsets. One subset is used for validation, while the rest are used for training. This is repeated $k$ times, and the performance metrics are averaged.
 
-![kfoldcv](/static/Figs/financial-modeling/kFoldCV.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![kfoldcv](/static/Figs/financial-modeling/kFoldCV.png)
+</div>
+
 
 ### Overcoming Challenges: Purging and Embargo
 
@@ -65,7 +72,10 @@ To mitigate the issue of data leakage, one solution is "purging." Purging involv
 
 View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
-![purging](/static/Figs/financial-modeling/Purging.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![purging](/static/Figs/financial-modeling/Purging.png)
+</div>
+
 
 #### Embargo
 

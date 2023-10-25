@@ -6,6 +6,10 @@ draft: false
 summary: Differentiation to an integer degree is used to make a series stationary. However, fractional differentiation allows the exponent to be a real number. This helps to preserve memory.
 ---
 
+<TOCInline toc={props.toc} exclude="Fractional Differentiation and Memory" asDisclosure/>
+
+<div style={{marginBottom: '2rem'}}/>
+
 ### Fractional Differentiation and Memory
 
 Traditionally, differentiation to an integer degree is used to make a series stationary. However, fractional differentiation allows the exponent to be a real number. This helps to preserve memory.
@@ -24,7 +28,17 @@ $$
 
 Here, $\omega$ consists of weights calculated based on the degree $d$. The weights alternate in sign and converge to zero as $k$ increases, providing an optimal balance between stationarity and memory.
 
-![Fig1](/static/Figs/financial-data-science/Fig1.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center'
+}}>
+    ![Fig1](/static/Figs/financial-data-science/Fig1.png)
+</div>
+
 
 ### Weight Sequence and Code Snippets
 
@@ -34,48 +48,74 @@ $$
 \omega_{k} = -\omega_{k-1} \frac{d-k+1}{k}
 $$
 
-![Fig2](/static/Figs/financial-data-science/Fig2.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center'
+}}>
+    ![Fig2](/static/Figs/financial-data-science/Fig2.png)
+</div>
+
 
 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
         <tr>
             <td style={{border: '1px solid transparent'}}>
 
-                ```python
-                def weighting(
-                degree: float,
-                size: int
-                ) -> list:
+```python
+def weighting(
+degree: float,
+size: int
+) -> list:
 
-                def plotWeights(
-                degreeRange: tuple,
-                numberDegrees: int,
-                size: int
-                ) -> None:
-                ```
+def plotWeights(
+degreeRange: tuple,
+numberDegrees: int,
+size: int
+) -> None:
+```
 
             </td>
             <td style={{border: '1px solid transparent'}}>
 
-                ```julia
-                function weighting(
-                degree::Float64,
-                size::Int
-                ) -> Vector{Float64}
+```julia
+function weighting(
+degree::Float64,
+size::Int
+) -> Vector{Float64}
 
-                function plotWeights(
-                degreeRange::Tuple{Float64, Float64},
-                numberDegrees::Int,
-                size::Int
-                ) -> Nothing
-                ```
+function plotWeights(
+degreeRange::Tuple,
+numberDegrees::Int,
+size::Int
+) -> Nothing
+```
 
             </td>
         </tr>
@@ -110,28 +150,44 @@ You select a \( l^* \) such that $ \lambda_{l^*} \leq \tau $ and $ \lambda_{l^*+
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
         <tr>
             <td style={{border: '1px solid transparent'}}>
 
-                ```python
-                def fracDiff(series: DataFrame,
-                degree: float,
-                threshold: float = 0.01) -> DataFrame:
-                ```
+```python
+def fracDiff(series: DataFrame,
+degree: float,
+threshold: float = 0.01) -> DataFrame:
+```
 
             </td>
             <td style={{border: '1px solid transparent'}}>
 
-                ```julia
-                function fracDiff(series::DataFrame,
-                degree::Float64,
-                threshold::Float64 = 0.01) -> DataFrame
-                ```
+```julia
+function fracDiff(series::DataFrame,
+degree::Float64,
+threshold::Float64 = 0.01) -> DataFrame
+```
 
             </td>
         </tr>
@@ -143,7 +199,7 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 The Fixed-width Window Fracdiff (FFD) method maintains a constant vector of weights $ \tilde{\omega}_{k} $ that do not fall below a given threshold \( \tau \).
 
 $$
-\tilde{\omega}_{k} = 
+\tilde{\omega}_{k} =
 \begin{cases}
 \omega_{k} & \text{if } k \leq l^* \\
 0 & \text{if } k > l^*
@@ -159,28 +215,44 @@ $$
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
         <tr>
             <td style={{border: '1px solid transparent'}}>
 
-                ```python
-                def fracDiffFixed(series: DataFrame,
-                degree: float,
-                threshold: float = 1e-5) -> DataFrame:
-                ```
+```python
+def fracDiffFixed(series: DataFrame,
+degree: float,
+threshold: float = 1e-5) -> DataFrame:
+```
 
             </td>
             <td style={{border: '1px solid transparent'}}>
 
-                ```julia
-                function fracDiffFixed(series::DataFrame,
-                degree::Float64,
-                threshold::Float64 = 1e-5) -> DataFrame
-                ```
+```julia
+function fracDiffFixed(series::DataFrame,
+degree::Float64,
+threshold::Float64 = 1e-5) -> DataFrame
+```
 
             </td>
         </tr>
@@ -197,24 +269,40 @@ Both methods allow for the quantification of how much memory (or autocorrelation
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
         <tr>
             <td style={{border: '1px solid transparent'}}>
 
-                ```python
-                def minFFD(input: DataFrame) -> float:
-                ```
+```python
+def minFFD(input: DataFrame) -> float:
+```
 
             </td>
             <td style={{border: '1px solid transparent'}}>
 
-                ```julia
-                function minFFD(input::DataFrame) -> Float64
-                ```
+```julia
+function minFFD(input::DataFrame) -> Float64
+```
 
             </td>
         </tr>
@@ -223,8 +311,18 @@ Both methods allow for the quantification of how much memory (or autocorrelation
 
 View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center'
+}}>
+    ![Fig2](/static/Figs/financial-data-science/Fig5.png)
+</div>
 
-![Fig2](/static/Figs/financial-data-science/Fig5.png)
+
 
 ### References
 

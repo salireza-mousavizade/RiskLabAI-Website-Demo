@@ -6,6 +6,10 @@ draft: false
 summary: Many people use Time bars to make sense of financial market data, but they're not the best choice. Why?
 ---
 
+<TOCInline toc={props.toc} exclude="The Need For Structure" asDisclosure/>
+
+<div style={{marginBottom: '2rem'}}/>
+
 # The Need For Structure
 
 Many people use Time bars to make sense of financial market data, but they're not the best choice. Why? First, trading isn't consistent throughout the day. Second, different types of bars can help solve this issue, like bars based on trading activity. For example, the function `timeBar` uses two things: a dataset of raw financial data (tickData) and how often you want the data to be updated (frequency). The function then gives you a new dataset that's easier to look at.
@@ -14,8 +18,22 @@ Many people use Time bars to make sense of financial market data, but they're no
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -52,8 +70,22 @@ You can also use Tick bars. This method collects specific variables (like timest
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -88,13 +120,27 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 
 But, Tick bars have a downside. Sometimes, one trade can look like many smaller trades due to how trading systems work. This can mess up your count.
 
-You can also use Volume bars. They update every time a certain amount of trading volume occurs. 
+You can also use Volume bars. They update every time a certain amount of trading volume occurs.
 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -134,15 +180,48 @@ Let's say you're watching a stock that doubled its price. To sell some of that s
 
 The number of Dollar bars remains pretty consistent, unlike Tick and Volume bars that can vary a lot. Below are some graphs that show the number of bars per day for these different methods.
 
-![synfig](/static/Figs/financial-data-science/bar_frequency.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center'
+}}>
+    ![synfig](/static/Figs/financial-data-science/bar_frequency.png)
+</div>
 
-![synfig](/static/Figs/financial-data-science/p11.png)
+
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center'
+}}>
+    ![synfig](/static/Figs/financial-data-science/p11.png)
+</div>
 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -180,7 +259,7 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 
 # Understanding Imbalance Bars in Financial Time Series Analysis with RiskLab AI
 
-Financial time series data, like stock prices or volumes, can be very noisy and challenging to analyze directly. Imbalance bars offer a way to cope with such issues by forming "bars" or samples based on imbalances in the tick, volume, or dollar value of the traded assets. This blog post explains how to implement and understand Tick Imbalance Bars (TIBs), Volume Imbalance Bars (VIBs), and Dollar Imbalance Bars (DIBs) in both Python and Julia using the RiskLabAI library. 
+Financial time series data, like stock prices or volumes, can be very noisy and challenging to analyze directly. Imbalance bars offer a way to cope with such issues by forming "bars" or samples based on imbalances in the tick, volume, or dollar value of the traded assets. This blog post explains how to implement and understand Tick Imbalance Bars (TIBs), Volume Imbalance Bars (VIBs), and Dollar Imbalance Bars (DIBs) in both Python and Julia using the RiskLabAI library.
 
 This post is aimed at making the concept clear to university-level international students, so it will be simple yet informative.
 
@@ -191,8 +270,8 @@ This post is aimed at making the concept clear to university-level international
 Consider a sequence of ticks $ (p_t, v_t) $ where $ p_t $ is the price at tick $ t $ and $ v_t $ is the volume at tick $ t $. To form Tick Imbalance Bars (TIBs), we use a tick rule defined by $ b_t $:
 
 $$
-b_t = 
-\begin{cases} 
+b_t =
+\begin{cases}
 b_{t-1} & \text{if } \Delta p_t = 0 \\
 \frac{\left| \Delta p_t \right|}{\Delta p_t} & \text{if } \Delta p_t \neq 0
 \end{cases}
@@ -202,23 +281,23 @@ Here, $ b_t $ can be either -1 or 1, and it essentially captures whether the tic
 
 ### Steps for Implementing TIBs
 
-1. **Tick Imbalance Calculation**: 
-   
-   $$
-   \theta_T = \sum_{t=1}^{T} b_t
-   $$
+1. **Tick Imbalance Calculation**:
 
-2. **Predicted Tick Imbalance**: 
+$$
+\theta_T = \sum_{t=1}^{T} b_t
+$$
 
-   $$
-   E_0[\theta_T] = E_0[T] \left( P[b_t = 1] - P[b_t = -1] \right)
-   $$
+2. **Predicted Tick Imbalance**:
 
-3. **Bar Formation Rule**: 
-   
-   $$
-   T^* = \arg \min_{T} \left\{ \left| \theta_T \right| \geq E_0[T] \left| 2 P[b_t = 1] - 1 \right| \right\}
-   $$
+$$
+E_0[\theta_T] = E_0[T] \left( P[b_t = 1] - P[b_t = -1] \right)
+$$
+
+3. **Bar Formation Rule**:
+
+$$
+T^* = \arg \min_{T} \left\{ \left| \theta_T \right| \geq E_0[T] \left| 2 P[b_t = 1] - 1 \right| \right\}
+$$
 
 ---
 
@@ -227,8 +306,22 @@ Before the code snippet, we'd like to inform you that these functionalities are 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -267,23 +360,23 @@ We can extend the concept of TIBs to form Volume Imbalance Bars (VIBs) and Dolla
 
 1. **Imbalance Calculation**:
 
-   $$
-   \theta_T = \sum_{t=1}^{T} b_t v_t
-   $$
+$$
+\theta_T = \sum_{t=1}^{T} b_t v_t
+$$
 
 2. **Predicted Imbalance**:
 
-   We define $ v^+ $ and $ v^- $ as the components contributed by buys and sells respectively. Thus,
+We define $ v^+ $ and $ v^- $ as the components contributed by buys and sells respectively. Thus,
 
-   $$
-   E_0[\theta_T] = E_0[T] \left( 2 v^+ - E_0[v_t] \right)
-   $$
+$$
+E_0[\theta_T] = E_0[T] \left( 2 v^+ - E_0[v_t] \right)
+$$
 
 3. **Bar Formation Rule**:
 
-   $$
-   T^* = \arg \min_{T} \left\{ \left| \theta_T \right| \geq E_0[T] \left| 2 v^+ - E_0[v_t] \right| \right\}
-   $$
+$$
+T^* = \arg \min_{T} \left\{ \left| \theta_T \right| \geq E_0[T] \left| 2 v^+ - E_0[v_t] \right| \right\}
+$$
 
 ---
 
@@ -292,8 +385,22 @@ Before the code snippet, we'd like to inform you that these functionalities are 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 
@@ -335,7 +442,7 @@ Order flow imbalance is a crucial indicator in financial markets, often used to 
 
 **Ticks, Volumes, and Dollar Values**
 
-Ticks are the smallest price movements that an asset can make, either upwards or downwards. Volumes indicate the number of assets being traded, and the dollar value represents the financial size of the trade. 
+Ticks are the smallest price movements that an asset can make, either upwards or downwards. Volumes indicate the number of assets being traded, and the dollar value represents the financial size of the trade.
 
 ### Calculating the Current Run's Length
 
@@ -371,13 +478,13 @@ Volume Runs Bars (VRBs) and Dollar Runs Bars (DRBs) extend the notion of runs to
 
 1. **Volume Runs Bars (VRBs)**
 
-   $$
-   \theta_T = \max \left( \sum_{t | b_t=1}^{T} b_t v_t, -\sum_{t | b_t=-1}^{T} b_t v_t \right)
-   $$
-   
+$$
+\theta_T = \max \left( \sum_{t | b_t=1}^{T} b_t v_t, -\sum_{t | b_t=-1}^{T} b_t v_t \right)
+$$
+
 2. **Dollar Runs Bars (DRBs)**
 
-   In this context, $ v_t $ can represent either the volume or the dollar value.
+In this context, $ v_t $ can represent either the volume or the dollar value.
 
 We also need to calculate the predicted $ \theta_T $ as:
 
@@ -398,8 +505,22 @@ $$
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>Julia
+            </th>
 
         </tr>
 

@@ -90,9 +90,8 @@ export default function Home({posts}) {
                         marginTop={'0.5rem'}
                         fontFamily={'sans-serif'}
                         style={{
-                            // color: '#ffd400',
-                            // background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
-                            background: 'linear-gradient(90deg, #555555, #ffd400)',
+                            // background: 'linear-gradient(45deg, #ffd500, #8400ff)',
+                            background: 'linear-gradient(90deg, #8400ff, #ffd800)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             MozBackgroundClip: 'text',
@@ -116,11 +115,46 @@ export default function Home({posts}) {
                     <Typography variant="h4" component="h4" gutterBottom>
                         Libraries
                     </Typography>
-                    <Typography variant="caption" gutterBottom>
+                    <Typography sx={{marginBottom: '1rem'}} variant="caption" gutterBottom>
                         At RiskLab AI, we combine powerful programming languages to bring our research to life.
                     </Typography>
 
                     <Grid container width={'100%'} spacing={2} sx={{width: '100%', padding: '0.5rem'}}>
+                        <Grid item xs={12} sm={12} md={6} lg={6}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
+                                <Typography variant="h6" textAlign={'center'}>
+                                    <Chip label={'Julia'} className={'text-gray-300 dark:text-gray-700'}
+                                          sx={{bgcolor: 'rgb(101,0,255)'}}/>
+                                </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12} sx={{marginTop: '1rem'}}>
+                                <Typography className={'text-gray-600 dark:text-gray-400'} textAlign={'justify'}
+                                            variant="caption" gutterBottom>
+                                    Julia is Known for its high performance and ease of use, Julia is particularly
+                                    well-suited for numerical and scientific computing. We leverage Julia's mathematical
+                                    modeling and data manipulation strength to implement our quantitative research.
+                                </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
+                                <Box my={1} style={{color: 'gray'}}>
+                                    <Typography variant="body1" gutterBottom>
+                                        <code># in terminal</code>
+                                        <br/>
+                                        <code>add RiskLabAI</code>
+                                    </Typography>
+                                    <Typography variant="body1" gutterBottom>
+                                        <code># in code workspace</code>
+                                        <br/>
+                                        <code>using RiskLabAI</code>
+                                        <br/>
+                                        <code>RiskLabAI.function_example()</code>
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        </Grid>
+
                         <Grid item xs={12} sm={12} md={6} lg={6}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Typography variant="h6" textAlign={'center'}>
@@ -158,40 +192,6 @@ export default function Home({posts}) {
 
                         </Grid>
 
-                        <Grid item xs={12} sm={12} md={6} lg={6}>
-                            <Grid item xs={12} sm={12} md={12} lg={12}>
-                                <Typography variant="h6" textAlign={'center'}>
-                                    <Chip label={'Julia'} className={'text-gray-300 dark:text-gray-700'}
-                                          sx={{bgcolor: 'rgb(101,0,255)'}}/>
-                                </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12} sx={{marginTop: '1rem'}}>
-                                <Typography className={'text-gray-600 dark:text-gray-400'} textAlign={'justify'}
-                                            variant="caption" gutterBottom>
-                                    Julia is Known for its high performance and ease of use, Julia is particularly
-                                    well-suited for numerical and scientific computing. We leverage Julia's mathematical
-                                    modeling and data manipulation strength to implement our quantitative research.
-                                </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} sm={12} md={12} lg={12}>
-                                <Box my={1} style={{color: 'gray'}}>
-                                    <Typography variant="body1" gutterBottom>
-                                        <code># in terminal</code>
-                                        <br/>
-                                        <code>add RiskLabAI</code>
-                                    </Typography>
-                                    <Typography variant="body1" gutterBottom>
-                                        <code># in code workspace</code>
-                                        <br/>
-                                        <code>using RiskLabAI</code>
-                                        <br/>
-                                        <code>RiskLabAI.function_example()</code>
-                                    </Typography>
-                                </Box>
-                            </Grid>
-                        </Grid>
 
                     </Grid>
                 </Box>

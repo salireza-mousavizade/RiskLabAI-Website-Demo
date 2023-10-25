@@ -6,6 +6,10 @@ draft: false
 summary: This blog post focuses on a novel way to decompose to signal and noise.
 ---
 
+<TOCInline toc={props.toc} exclude="The Tone, the Signal and the Noise" asDisclosure />
+
+<div style={{marginBottom: '2rem'}}/>
+
 # The Tone, the Signal and the Noise
 
 Here's how the Marcenko-Pastur PDF is mathematically defined:
@@ -59,7 +63,9 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 
 We also discussed the limitations of commonly used methods like shrinkage for conditioning covariance matrices and presented an alternative approach for denoising.
 
-![3](/static/Figs/financial-data-science/1.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![3](/static/Figs/financial-data-science/1.png)
+</div>
 
 The denoising methodology aims to preserve the signal while removing the noise. It first identifies the eigenvalues associated with noise and then adjusts them to enhance the signal-to-noise ratio.
 
@@ -93,7 +99,10 @@ The denoising methodology aims to preserve the signal while removing the noise. 
 View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
 
-![3](/static/Figs/financial-data-science/3.png)
+<div className="my-1 overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '90%', alignItems: 'center', justifyContent: 'center'}}>
+    ![3](/static/Figs/financial-data-science/3.png)
+</div>
+
 
 ## Detoning: Simplifying the Math
 
