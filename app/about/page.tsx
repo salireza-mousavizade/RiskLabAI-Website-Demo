@@ -605,19 +605,17 @@ export default function Page() {
 
             <FormikProvider value={formik}>
                 <Paper
-                    style={{
+                    elevation={10}
+                    sx={{
                         display: 'flex',
                         justifyContent: 'center',
                         width: '80vw',
-                        marginY: 1,
                         padding: 3,
-                        borderRadius: 3
+                        borderRadius: 3,
+                        marginX: 'auto', marginY: 1,
                     }}
-                    elevation={10}
-                    display="flex"
-                    justifyContent="center"
-                    width="80%">
-                    <Form sx={{alignItems: 'center', width: '80%', padding: 2}}>
+                >
+                    <Form style={{alignItems: 'center', width: '80%', padding: 2}}>
                         <TextField
                             sx={{
                                 width: '50%',
