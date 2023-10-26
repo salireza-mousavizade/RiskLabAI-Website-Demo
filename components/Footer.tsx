@@ -19,16 +19,13 @@ export default function Footer() {
                     <Link href={siteMetadata.github}>
                         <GitHubIcon/>
                     </Link>
-                    <Link href={siteMetadata.facebook}>
-                        <FacebookOutlined/>
-                    </Link>
-                    <Link href={siteMetadata.youtube}>
+                    <Link href={"https://youtube.com"}>
                         <YouTubeIcon/>
                     </Link>
-                    <Link href={siteMetadata.linkedin}>
+                    <Link href={"https://www.linkedin.com"}>
                         <LinkedInIcon/>
                     </Link>
-                    <Link href={siteMetadata.twitter}>
+                    <Link href={"https://twitter.com"}>
                         <Twitter/>
                     </Link>
                 </div>
