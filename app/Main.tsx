@@ -69,6 +69,8 @@ export default function Home({posts}) {
         setOpenInfoDialog(false);
     };
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <>
             <Container component="main">
@@ -82,12 +84,6 @@ export default function Home({posts}) {
                     }}
                 >
                     <img src={'/static/logo/logo-static.png'} width={400} height={200} alt={'saf'}/>
-
-
-                    <video className="w-full" controls>
-                        <source src="https://www.youtube-nocookie.com/embed/BBABA-oKEsM?si=1eRZPHZoaGCIZNpy" type="video/mp4">
-                        </source>
-                    </video>
 
                     <Typography
                         variant="h2"
@@ -129,13 +125,13 @@ export default function Home({posts}) {
                         <Grid item xs={12} sm={12} md={6} lg={6}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Typography variant="h6" textAlign={'center'}>
-                                    <Chip label={'Julia'} className={'text-gray-300 dark:text-gray-700'}
+                                    <Chip label={'Julia'} className={'text-gray-300 dark:text-gray-950'}
                                           sx={{bgcolor: 'rgb(101,0,255)'}}/>
                                 </Typography>
                             </Grid>
 
                             <Grid item xs={12} sm={12} md={12} lg={12} sx={{marginTop: '1rem'}}>
-                                <Typography className={'text-gray-600 dark:text-gray-400'} textAlign={'justify'}
+                                <Typography className={'text-gray-800 dark:text-gray-200'} textAlign={'justify'}
                                             variant="caption" gutterBottom>
                                     Julia is Known for its high performance and ease of use, Julia is particularly
                                     well-suited for numerical and scientific computing. We leverage Julia's mathematical
@@ -164,7 +160,7 @@ export default function Home({posts}) {
                         <Grid item xs={12} sm={12} md={6} lg={6}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Typography variant="h6" textAlign={'center'}>
-                                    <Chip label={'Python'} className={'text-gray-300 dark:text-gray-700'}
+                                    <Chip label={'Python'} className={'text-gray-300 dark:text-gray-950'}
                                           sx={{bgcolor: 'rgb(255,183,1)'}}/>
                                 </Typography>
                             </Grid>
@@ -232,8 +228,8 @@ export default function Home({posts}) {
                                 innovative solutions.
                             </Typography>
 
-                            <FormikProvider value={formik} validateOnChange={false} validateOnBlur={false}>
-                                <Form value={formik}>
+                            <FormikProvider value={formik}>
+                                <Form>
                                     <TextField
                                         sx={{
                                             marginTop: '0.5rem',
@@ -253,45 +249,40 @@ export default function Home({posts}) {
                                             style: {flex: 1},
                                             endAdornment: (
                                                 <Tooltip title={formik.errors.email} arrow>
-                                                    <IconButton
-                                                        onClick={handleClickOpen}
-                                                        color="success"
-                                                        variant="contained"
-                                                        type="submit">
-                                                        <SendSharpIcon/>
+                                                    <IconButton type={"submit"} component={SendSharpIcon} onClick={handleClickOpen}>
                                                     </IconButton>
-                                                    <Dialog
-                                                        open={openInfoDialog}
-                                                        onClose={handleClose}
-                                                        aria-labelledby="alert-dialog-title"
-                                                        aria-describedby="alert-dialog-description"
-                                                    >
-                                                        <DialogTitle id="alert-dialog-title">
-                                                            Welcome to RiskLabAI family!
-                                                        </DialogTitle>
-                                                        <DialogContent>
-                                                            <DialogContentText id="alert-dialog-description">
-                                                                We're thrilled to welcome you to the RiskLabAI family!
-                                                                Thank you for subscribing to our newsletter.
-                                                                You've taken the first step towards staying updated
-                                                                with the latest news, exclusive offers, and exciting
-                                                                content from <b>RiskLabAI</b>.
-                                                                <br/>
-                                                                <br/>
-                                                                Warm regards,
-                                                                The RiskLabAI Team
-                                                            </DialogContentText>
-                                                        </DialogContent>
-                                                        <DialogActions>
-                                                            <Button onClick={handleClose} autoFocus>
-                                                                Ok
-                                                            </Button>
-                                                        </DialogActions>
-                                                    </Dialog>
                                                 </Tooltip>
                                             ),
                                         }}
                                     />
+                                    <Dialog
+                                        open={openInfoDialog}
+                                        onClose={handleClose}
+                                        aria-labelledby="alert-dialog-title"
+                                        aria-describedby="alert-dialog-description"
+                                    >
+                                        <DialogTitle id="alert-dialog-title">
+                                            Welcome to RiskLabAI family!
+                                        </DialogTitle>
+                                        <DialogContent>
+                                            <DialogContentText id="alert-dialog-description">
+                                                We're thrilled to welcome you to the RiskLabAI family!
+                                                Thank you for subscribing to our newsletter.
+                                                You've taken the first step towards staying updated
+                                                with the latest news, exclusive offers, and exciting
+                                                content from <b>RiskLabAI</b>.
+                                                <br/>
+                                                <br/>
+                                                Warm regards,
+                                                The RiskLabAI Team
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+                                            <Button onClick={handleClose} autoFocus>
+                                                Ok
+                                            </Button>
+                                        </DialogActions>
+                                    </Dialog>
 
                                 </Form>
                             </FormikProvider>
