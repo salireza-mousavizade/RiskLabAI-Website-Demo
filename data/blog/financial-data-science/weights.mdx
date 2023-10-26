@@ -8,7 +8,7 @@ summary: You might have noticed that many financial models rely on the assumptio
 
 <TOCInline toc={props.toc} exclude="Financial Data Weighting" asDisclosure/>
 
-<div style={{marginBottom: 2}}/>
+<div style={{marginBottom: '2rem'}}/>
 
 # Financial Data Weighting
 
@@ -38,8 +38,8 @@ The number of labels that are concurrent at time $t$ is represented by $ c_t = \
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -70,32 +70,6 @@ The number of labels that are concurrent at time $t$ is represented by $ c_t = \
 
 View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](https://www.github.com/risklabai/RiskLabAI.jl)
 
-<div style="display: flex; justify-content: center;">
-  <table style="width:80%">
-    <tr><th style="width:50%; text-align: center">Python</th><th style="width:50%; text-align: center">Julia</th></tr>
-    <tr><td style="border: 1px solid transparent">
-
-  ```python
-  def concurrencyEvents(
-        closeIndex: pd.DataFrame,
-        timestamp: pd.DataFrame,
-        molecule: pd.Series
-  ) -> None:
-  ```
-  </td><td style="border: 1px solid transparent">
-
-  ```julia
-  function concurrencyEvents(
-        closeIndex::DataFrame,
-        timestamp::DataFrame,
-        molecule::Vector
-  )::DataFrame
-  ```
-  </td></tr>
-  <tr><td colspan="2" style="text-align: center">View More: <a href="https://www.github.com/risklabai/RiskLabAI.py">Python</a> | <a href="https://www.github.com/risklabai/RiskLabAI.jl">Julia</a></td></tr>
-  </table>
-</div>
-
 ## Measuring Label Uniqueness
 
 Next, we introduce a function to measure label uniqueness at a given time $ t $. This function, denoted as $ u_{t, i} $, is defined as:
@@ -121,8 +95,8 @@ In both RiskLabAI's Python and Julia libraries, you can estimate label uniquenes
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -176,8 +150,8 @@ Both Python and Julia libraries in RiskLabAI offer functions to calculate the in
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -215,8 +189,8 @@ Both libraries also offer functions to calculate the average uniqueness of the s
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -252,8 +226,8 @@ Finally, for sequential bootstrap sampling, the Python function is `SequentialBo
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -299,8 +273,8 @@ We generate random timestamps for each observation within the given parameters. 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -341,8 +315,8 @@ We run Monte Carlo simulations to compare the Sequential Bootstrap with the Stan
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -383,8 +357,8 @@ For a more robust assessment, we run the Monte Carlo simulation in multiple iter
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -441,8 +415,8 @@ In RiskLabAI, we offer functions to handle this weight assignment. The Julia fun
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
@@ -494,8 +468,8 @@ Again, RiskLabAI has built-in functions for this. The Julia function `TimeDecay`
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: 2,}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: 2, }}>Julia</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '2rem',}}>Python</th>
+            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '2rem', }}>Julia</th>
 
         </tr>
 
