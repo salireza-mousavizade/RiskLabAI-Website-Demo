@@ -8,7 +8,7 @@ import CustomLink from './Link'
 export const components: MDXComponents = {
   Image,
   TOCInline,
-7  a: CustomLink,
+  a: CustomLink,
   pre: Pre,
   BlogNewsletterForm,
 }

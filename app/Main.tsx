@@ -83,6 +83,12 @@ export default function Home({posts}) {
                 >
                     <img src={'/static/logo/logo-static.png'} width={400} height={200} alt={'saf'}/>
 
+
+                    <video className="w-full" controls>
+                        <source src="https://www.youtube-nocookie.com/embed/BBABA-oKEsM?si=1eRZPHZoaGCIZNpy" type="video/mp4">
+                        </source>
+                    </video>
+
                     <Typography
                         variant="h2"
                         component="h1"
@@ -101,6 +107,7 @@ export default function Home({posts}) {
                         RiskLab
                         <b className={'font-bold'}>AI</b>
                     </Typography>
+
                     <Typography textAlign={'justify'} variant="caption" gutterBottom>
                         Welcome to RiskLab AI, where high-performance, cutting-edge financial intelligence meets
                         academic rigor. Our mission is to bridge the gap between academic research and practical

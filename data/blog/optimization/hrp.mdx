@@ -6,7 +6,8 @@ draft: false
 summary: A cutting-edge method for constructing financial portfolios, called Hierarchical Risk Parity (HRP). This method overcomes challenges posed by traditional techniques, by using modern mathematics and machine learning.
 ---
 
-<TOCInline toc={props.toc} exclude="Hierarchical Risk Parity: A Modern Portfolio Construction Method" asDisclosure />
+<TOCInline toc={props.toc} exclude="Hierarchical Risk Parity: A Modern Portfolio Construction Method" asDisclosure/>
+
 <div style={{marginBottom: '2rem'}}/>
 
 # Hierarchical Risk Parity: A Modern Portfolio Construction Method
@@ -22,7 +23,13 @@ We use tree structures to hierarchically cluster financial assets. The goal is t
 In mathematical terms:
 
 $$
-d_{i, j} = \sqrt{\frac{1}{2}(1 - \rho_{i, j})}
+d_{i, j} = \sqrt{\frac{
+1
+}{
+2
+}(1 - \rho_{
+i, j
+})}
 $$
 
 The algorithm performs clustering based on a new distance measure $\tilde{d}$, which computes the distance between column vectors of $D$. Eventually, we create clusters by minimizing $\tilde{d}_{i, j}$.
@@ -30,8 +37,24 @@ The algorithm performs clustering based on a new distance measure $\tilde{d}$, w
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
@@ -67,28 +90,44 @@ The next stage rearranges the covariance matrix to group similar investments tog
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
         <tr>
             <td style={{border: '1px solid transparent'}}>
 
-```python
-def quasiDiagonal(
-link: np.ndarray
-) -> np.ndarray:
-```
+                ```python
+                def quasiDiagonal(
+                link: np.ndarray
+                ) -> np.ndarray:
+                ```
 
             </td>
             <td style={{border: '1px solid transparent'}}>
 
-```julia
-function quasiDiagonal(
-link::Array{Float64,2}
-)::Array{Float64,2}
-```
+                ```julia
+                function quasiDiagonal(
+                link::Array{Float64,2}
+                )::Array{Float64,2}
+                ```
 
             </td>
         </tr>
@@ -105,16 +144,32 @@ The algorithm follows:
 
 1. Initialize list of items $L$ and assign a unit weight to all items $w_n=1, \forall n$.
 2. For each subset $L_i$ with more than one item:
-    - Bisect $L_i$ into two subsets $L_i^{(1)}$ and $L_i^{(2)}$.
-    - Define the variance of each subset $\tilde{V}_{i}^{(j)}$ based on the covariance matrix of its constituents.
+- Bisect $L_i$ into two subsets $L_i^{(1)}$ and $L_i^{(2)}$.
+- Define the variance of each subset $\tilde{V}_{i}^{(j)}$ based on the covariance matrix of its constituents.
 
 And so, the portfolio is constructed.
 
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
@@ -165,8 +220,24 @@ This procedure is repeated 10,000 times.
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
@@ -210,8 +281,24 @@ The HRP method is flexible and allows for variations. It can incorporate forecas
 <div style={{display: 'flex', justifyContent: 'center'}}>
     <table style={{tableLayout: 'fixed', width: '90%'}}>
         <tr>
-            <th style={{width: '50%', textAlign: 'center', color: 'darkgoldenrod', fontFamily:'sans-serif', fontSize: '1.25rem',}}>Python</th>
-            <th style={{width: '50%', textAlign: 'center', color: 'rebeccapurple', fontFamily:'sans-serif', fontSize: '1.25rem', }}>Julia</th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'darkgoldenrod',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Python
+            </th>
+            <th style={{
+                width: '50%',
+                textAlign: 'center',
+                color: 'rebeccapurple',
+                fontFamily: 'sans-serif',
+                fontSize: '1.25rem',
+            }}>
+                Julia
+            </th>
 
         </tr>
 
@@ -247,7 +334,11 @@ View More: [Python](https://www.github.com/risklabai/RiskLabAI.py) | [Julia](htt
 In simpler terms, let's consider two vectors $ X $ and $ Y $. The correlation variable $ \rho[x, y] $ is used to derive a distance measure $ d[x, y] $ defined as:
 
 $$
-d[x, y] = \sqrt{\frac{1}{2}(1 - \rho[x, y])}
+d[x, y] = \sqrt{\frac{
+1
+}{
+2
+}(1 - \rho[x, y])}
 $$
 
 This distance measure is proven to be a true metric, providing a robust way to measure how similar or different two portfolios are.
