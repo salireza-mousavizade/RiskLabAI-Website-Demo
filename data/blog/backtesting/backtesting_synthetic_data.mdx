@@ -27,10 +27,10 @@ The strategy uses a standard trading rule for exiting an opportunity when either
 
 The trading rule is defined by these thresholds $\{ \underline{\pi}, \bar{\pi} \}$.
 
-The goal is to find the optimal set of these thresholds, often denoted as $ R^\* $, that maximizes the Sharpe ratio, $ SR_R $, defined as:
+The goal is to find the optimal set of these thresholds, often denoted as $ R^* $, that maximizes the Sharpe ratio, $ SR_R $, defined as:
 
 $$
-\hat{R} = \arg \max_{R \in \Omega} \left\{ \frac{E[\pi_{i, T_i} \mid R]}{\sigma[\pi_{i, T_i} \mid R]} \right\}
+R^* = \arg \max_{R \in \Omega} \left\{ \frac{E[\pi_{i, T_i} \mid R]}{\sigma[\pi_{i, T_i} \mid R]} \right\}
 $$
 
 ## Defining Overfitting in Trading Rules
