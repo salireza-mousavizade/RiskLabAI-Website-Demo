@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js',
+  title: 'RiskLab AI',
   author: 'S.Alireza Mousavizade',
   headerTitle: 'RiskLabAI',
   description: 'A blog created with Next.js and Tailwind.css',
