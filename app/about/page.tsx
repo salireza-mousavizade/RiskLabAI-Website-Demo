@@ -419,13 +419,13 @@ export default function Page() {
                 {/*    RiskLab AI Head*/}
                 {/*</Typography>*/}
 
-                <InteractivePaper rotationAmount={0.15}>
+                <InteractivePaper sx={{}} rotationAmount={0.15}>
                     <Stack
-                        display="flex"
+                        display={'flex'}
                         style={{
                             alignItems: 'center',
                         }}
-                        justifycontent="center"
+                        justifyContent={'center'}
                         spacing={2}
                         padding={2}
                     >
