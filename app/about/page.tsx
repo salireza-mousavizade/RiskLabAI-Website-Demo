@@ -1,6 +1,7 @@
 'use client'
 
 import useBreakpoint, {responsiveIconSize} from '../use_breakpoint'
+import * as React from 'react'
 import {useState} from 'react'
 import LiveIconComponent from '../live_icon_component'
 import {
@@ -8,7 +9,11 @@ import {
     Box,
     Button,
     ButtonGroup,
-    Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
     Grid,
     InputAdornment,
     Paper,
@@ -32,7 +37,6 @@ import EventsAccordion from './EventsAccordion'
 import ContactInfoTabs from './ContactInfo'
 
 import InteractivePaper from "../InteractivePaper";
-import * as React from "react";
 
 
 export default function Page() {
@@ -83,7 +87,6 @@ export default function Page() {
     const handleClose = () => {
         setOpenInfoDialog(false);
     };
-
 
 
     const iconSize = responsiveIconSize(useBreakpoint())
@@ -369,15 +372,10 @@ export default function Page() {
                 {/*    RiskLab Toronto Head*/}
                 {/*</Typography>*/}
 
-                <InteractivePaper rotationAmount={0.15} sx={{}} >
+                <InteractivePaper rotationAmount={0.15} sx={{}}>
                     <Stack
-                        display="flex"
-                        style={{
-                            alignItems: 'center',
-                        }}
-                        justifycontent="center"
+                        style={{alignItems: 'center', display: 'flex', justifyContent: 'center', padding: 2,}}
                         spacing={2}
-                        padding={2}
                     >
                         <Avatar
                             key={'avatar'}
@@ -387,11 +385,13 @@ export default function Page() {
                             sx={{width: '100%', height: '100%'}}
                         />
 
-                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}} key={'full name'} variant="h5">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}}
+                                    key={'full name'} variant="h5">
                             {luisSeco.name}
                         </Typography>
 
-                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'toronto'} variant="caption">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'toronto'}
+                                    variant="caption">
                             {luisSeco.description}
                         </Typography>
 
@@ -399,6 +399,7 @@ export default function Page() {
                             {luisSeco.iconsData.map((item) => {
                                 return (
                                     <LiveIconComponent
+                                        showText={false}
                                         text={item.title}
                                         icon={item.icon}
                                         to={item.to}
@@ -437,11 +438,13 @@ export default function Page() {
                             sx={{width: '100%', height: '100%'}}
                         />
 
-                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}} key={'full name'} variant="h5">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'center'}}
+                                    key={'full name'} variant="h5">
                             {hamidArian.name}
                         </Typography>
 
-                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'york'} variant="caption">
+                        <Typography className={'text-black dark:text-white'} sx={{textAlign: 'justify'}} key={'york'}
+                                    variant="caption">
                             {hamidArian.description}
                         </Typography>
 
@@ -449,6 +452,7 @@ export default function Page() {
                             {hamidArian.iconsData.map((item) => {
                                 return (
                                     <LiveIconComponent
+                                        showText={false}
                                         text={item.title}
                                         icon={item.icon}
                                         to={item.to}
@@ -519,7 +523,6 @@ export default function Page() {
                     Events
                 </Typography>
             </Grid>
-
 
 
             <Grid item key={'risklab intro'} xs={12} sm={12} md={12} lg={12} mb={2}>
@@ -600,14 +603,22 @@ export default function Page() {
                 </Typography>
             </Grid>
 
-            <FormikProvider value={formik} validateOnChange={false} validateOnBlur={false}>
+            <FormikProvider value={formik}>
                 <Paper
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        width: '80vw',
+                        marginX: 'auto',
+                        marginY: 1,
+                        padding: 3,
+                        borderRadius: 3
+                    }}
                     elevation={10}
                     display="flex"
                     justifyContent="center"
-                    width="80%"
-                    sx={{marginX: 'auto', marginY: 1, padding: 3, borderRadius: 3}}>
-                    <Form value={formik} sx={{alignItems: 'center', width: '80%', padding: 2}}>
+                    width="80%">
+                    <Form sx={{alignItems: 'center', width: '80%', padding: 2}}>
                         <TextField
                             sx={{
                                 width: '50%',
@@ -713,7 +724,10 @@ export default function Page() {
                                 </DialogTitle>
                                 <DialogContent>
                                     <DialogContentText id="alert-dialog-description">
-                                        Your message has been successfully submitted. We truly value your input and inquiries. Our team will review your message and get back to you as soon as possible. In the meantime, feel free to explore our website further or check out our FAQs for instant answers. Thank you for choosing <b>RiskLabAI</b>.
+                                        Your message has been successfully submitted. We truly value your input and
+                                        inquiries. Our team will review your message and get back to you as soon as
+                                        possible. In the meantime, feel free to explore our website further or check out
+                                        our FAQs for instant answers. Thank you for choosing <b>RiskLabAI</b>.
                                         <br/>
                                         <br/>
                                         Best regards,
