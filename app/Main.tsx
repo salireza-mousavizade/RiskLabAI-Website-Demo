@@ -101,7 +101,6 @@ export default function Home({posts}) {
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             MozBackgroundClip: 'text',
-                            MozTextFillColor: 'transparent',
                         }}
                     >
                         RiskLab
