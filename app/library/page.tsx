@@ -192,12 +192,14 @@ end
                                         </Typography>
                                         <ButtonGroup variant="outlined" aria-label="outlined button group">
                                             <LiveIconComponent
+                                                showText={false}
                                                 text={'Read'}
                                                 icon={AttachFileIcon}
                                                 to={'paperlink'}
                                                 sx={{fontSize: 16}}
                                             />
                                             <LiveIconComponent
+                                                showText={false}
                                                 text={'Code'}
                                                 icon={CodeIcon}
                                                 to={'codelink'}

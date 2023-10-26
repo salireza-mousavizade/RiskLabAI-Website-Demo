@@ -398,12 +398,14 @@ export default function Research() {
                                             </Typography>
                                             <ButtonGroup variant="outlined" aria-label="outlined button group">
                                                 <LiveIconComponent
+                                                    showText={true}
                                                     text={'Read'}
                                                     icon={AttachFileIcon}
                                                     to={'paperlink'}
                                                     sx={{fontSize: 16}}
                                                 />
                                                 <LiveIconComponent
+                                                    showText={true}
                                                     text={'Code'}
                                                     icon={CodeIcon}
                                                     to={'codelink'}

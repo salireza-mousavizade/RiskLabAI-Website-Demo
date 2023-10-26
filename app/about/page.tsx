@@ -191,7 +191,6 @@ export default function Page() {
         {
             name: 'S. Alireza Mousavizade',
             role: 'Research Assistant',
-
             description:
                 "is a RiskLab AI research assistant and student in Computer Science and Economics at Sharif University of Technology. His primary interest is in Statistics, Machine Learning and Mathematical Finance. He is working on Julia and Python's Library at RiskLab AI. He is also a research assistant for TeiAS in Natural Language Processing.",
             university: 'Sharif University of Technology',

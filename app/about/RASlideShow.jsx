@@ -72,6 +72,7 @@ export default function SlideShow({raList, elevationValue, iconSize}) {
                                     <ButtonGroup aria-label="large button group">
                                         {ra.iconsData.map((item) => (
                                             <LiveIconComponent
+                                                showText={false}
                                                 text={item.title}
                                                 icon={item.icon}
                                                 to={item.to}
