@@ -369,7 +369,7 @@ export default function Page() {
                 {/*    RiskLab Toronto Head*/}
                 {/*</Typography>*/}
 
-                <InteractivePaper rotationAmount={0.15} >
+                <InteractivePaper rotationAmount={0.15} sx={{}} >
                     <Stack
                         display="flex"
                         style={{
