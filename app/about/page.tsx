@@ -609,7 +609,6 @@ export default function Page() {
                         display: 'flex',
                         justifyContent: 'center',
                         width: '80vw',
-                        marginX: 'auto',
                         marginY: 1,
                         padding: 3,
                         borderRadius: 3
